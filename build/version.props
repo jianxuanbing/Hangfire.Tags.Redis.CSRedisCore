@@ -1,0 +1,22 @@
+<Project>
+  <PropertyGroup>
+    <VersionMajor>0</VersionMajor>
+    <VersionMinor>0</VersionMinor>
+    <VersionPatch>1</VersionPatch>
+    <VersionQuality>20201216-1</VersionQuality>
+    <VersionPrefix>$(VersionMajor).$(VersionMinor).$(VersionPatch)</VersionPrefix>
+    <VersionSuffix>preview-$(VersionQuality)</VersionSuffix>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Authors>简玄冰</Authors>
+    <Company>简玄冰</Company>
+    <Copyright>简玄冰</Copyright>
+    <PackageLicenseUrl>https://github.com/jianxuanbing/Hangfire.Tags.Redis.CSRedisCore/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/jianxuanbing/Hangfire.Tags.Redis.CSRedisCore</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/jianxuanbing/Hangfire.Tags.Redis.CSRedisCore</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>hangfire tags redis</PackageTags>
+    <PackageReleaseNotes>Hangfire Tags基于CSRedisCore的实现存储</PackageReleaseNotes>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+</Project>

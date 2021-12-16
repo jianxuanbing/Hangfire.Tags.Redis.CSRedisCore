@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Hangfire.Tags.Redis.CSRedisCore</name>
+    </assembly>
+    <members>
+    </members>
+</doc>

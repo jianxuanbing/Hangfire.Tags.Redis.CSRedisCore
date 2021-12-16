@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project Items", "Project Items", "{67FF9576-A353-4782-8102-8CEF1A709D9A}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+		build\version.props = build\version.props
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hangfire.Tags.Redis.CSRedisCore", "src\Hangfire.Tags.Redis.CSRedisCore\Hangfire.Tags.Redis.CSRedisCore.csproj", "{D4FDA773-363E-4FAB-9968-2FAB705789DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4FDA773-363E-4FAB-9968-2FAB705789DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4FDA773-363E-4FAB-9968-2FAB705789DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4FDA773-363E-4FAB-9968-2FAB705789DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4FDA773-363E-4FAB-9968-2FAB705789DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A5C2930-8EEA-447C-A37F-6D54C904A309}
+	EndGlobalSection
+EndGlobal
