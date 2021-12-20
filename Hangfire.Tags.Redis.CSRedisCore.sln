@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project Items", "Project It
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hangfire.Tags.Redis.CSRedisCore", "src\Hangfire.Tags.Redis.CSRedisCore\Hangfire.Tags.Redis.CSRedisCore.csproj", "{D4FDA773-363E-4FAB-9968-2FAB705789DF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{A956AAC9-4D19-48AF-A2C9-CE9EC9B04141}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hangfire.Tags.Sample", "samples\Hangfire.Tags.Sample\Hangfire.Tags.Sample.csproj", "{F11C032B-606D-4D12-AFA1-3E6F93EE7535}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,9 +26,16 @@ Global
 		{D4FDA773-363E-4FAB-9968-2FAB705789DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4FDA773-363E-4FAB-9968-2FAB705789DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4FDA773-363E-4FAB-9968-2FAB705789DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F11C032B-606D-4D12-AFA1-3E6F93EE7535}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F11C032B-606D-4D12-AFA1-3E6F93EE7535}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F11C032B-606D-4D12-AFA1-3E6F93EE7535}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F11C032B-606D-4D12-AFA1-3E6F93EE7535}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F11C032B-606D-4D12-AFA1-3E6F93EE7535} = {A956AAC9-4D19-48AF-A2C9-CE9EC9B04141}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3A5C2930-8EEA-447C-A37F-6D54C904A309}

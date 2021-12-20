@@ -4,5 +4,288 @@
         <name>Hangfire.Tags.Redis.CSRedisCore</name>
     </assembly>
     <members>
+        <member name="T:Hangfire.Tags.Redis.CSRedisCore.GlobalConfigurationExtensions">
+            <summary>
+            Hangfire全局配置(<see cref="T:Hangfire.IGlobalConfiguration"/>) 扩展
+            </summary>
+        </member>
+        <member name="M:Hangfire.Tags.Redis.CSRedisCore.GlobalConfigurationExtensions.UseTagsWithRedis(Hangfire.IGlobalConfiguration,Hangfire.Tags.TagsOptions,Hangfire.Redis.RedisStorageOptions,Hangfire.JobStorage)">
+            <summary>
+            配置Hangfire使用标签
+            </summary>
+            <param name="configuration">全局配置</param>
+            <param name="options">标签选项配置</param>
+            <param name="redisOptions">Redis选项配置</param>
+            <param name="jobStorage">作业存储</param>
+        </member>
+        <member name="T:Hangfire.Tags.Redis.CSRedisCore.RedisJob">
+            <summary>
+            Redis作业
+            </summary>
+        </member>
+        <member name="P:Hangfire.Tags.Redis.CSRedisCore.RedisJob.Id">
+            <summary>
+            标识
+            </summary>
+        </member>
+        <member name="P:Hangfire.Tags.Redis.CSRedisCore.RedisJob.InvocationData">
+            <summary>
+            调用数据
+            </summary>
+        </member>
+        <member name="P:Hangfire.Tags.Redis.CSRedisCore.RedisJob.Arguments">
+            <summary>
+            参数
+            </summary>
+        </member>
+        <member name="P:Hangfire.Tags.Redis.CSRedisCore.RedisJob.CreatedAt">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Hangfire.Tags.Redis.CSRedisCore.RedisJob.ExpireAt">
+            <summary>
+            过期时间
+            </summary>
+        </member>
+        <member name="P:Hangfire.Tags.Redis.CSRedisCore.RedisJob.FetchedAt">
+            <summary>
+            拉取时间
+            </summary>
+        </member>
+        <member name="P:Hangfire.Tags.Redis.CSRedisCore.RedisJob.StateName">
+            <summary>
+            状态名称
+            </summary>
+        </member>
+        <member name="P:Hangfire.Tags.Redis.CSRedisCore.RedisJob.StateReason">
+            <summary>
+            状态原因
+            </summary>
+        </member>
+        <member name="P:Hangfire.Tags.Redis.CSRedisCore.RedisJob.StateData">
+            <summary>
+            状态数据
+            </summary>
+        </member>
+        <member name="T:Hangfire.Tags.Redis.CSRedisCore.RedisStateFilter">
+            <summary>
+            Redis状态过滤器
+            </summary>
+        </member>
+        <member name="F:Hangfire.Tags.Redis.CSRedisCore.RedisStateFilter._storage">
+            <summary>
+            Redis标签服务存储
+            </summary>
+        </member>
+        <member name="M:Hangfire.Tags.Redis.CSRedisCore.RedisStateFilter.#ctor(Hangfire.Tags.Redis.CSRedisCore.RedisTagsServiceStorage)">
+            <summary>
+            初始化一个<see cref="T:Hangfire.Tags.Redis.CSRedisCore.RedisStateFilter"/>类型的实例
+            </summary>
+            <param name="storage">Redis标签服务存储</param>
+        </member>
+        <member name="M:Hangfire.Tags.Redis.CSRedisCore.RedisStateFilter.OnStateApplied(Hangfire.States.ApplyStateContext,Hangfire.Storage.IWriteOnlyTransaction)">
+            <summary>
+            Called after the specified state was applied
+            to the job within the given transaction.
+            </summary>
+        </member>
+        <member name="M:Hangfire.Tags.Redis.CSRedisCore.RedisStateFilter.OnStateUnapplied(Hangfire.States.ApplyStateContext,Hangfire.Storage.IWriteOnlyTransaction)">
+            <summary>
+            Called when the state with specified state was
+            unapplied from the job within the given transaction.
+            </summary>
+        </member>
+        <member name="T:Hangfire.Tags.Redis.CSRedisCore.RedisTagsMonitoringApi">
+            <summary>
+            Redis标签监控API
+            </summary>
+        </member>
+        <member name="F:Hangfire.Tags.Redis.CSRedisCore.RedisTagsMonitoringApi._monitoringApi">
+            <summary>
+            监控API
+            </summary>
+        </member>
+        <member name="F:Hangfire.Tags.Redis.CSRedisCore.RedisTagsMonitoringApi._type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="F:Hangfire.Tags.Redis.CSRedisCore.RedisTagsMonitoringApi._useConnection">
+            <summary>
+            使用连接方法
+            </summary>
+        </member>
+        <member name="M:Hangfire.Tags.Redis.CSRedisCore.RedisTagsMonitoringApi.UseConnection``1(System.Func{CSRedis.CSRedisClient,``0})">
+            <summary>
+            使用连接
+            </summary>
+            <typeparam name="T">类型</typeparam>
+            <param name="action">操作</param>
+        </member>
+        <member name="T:Hangfire.Tags.Redis.CSRedisCore.RedisTagsServiceStorage">
+            <summary>
+            Redis标签服务存储
+            </summary>
+        </member>
+        <member name="F:Hangfire.Tags.Redis.CSRedisCore.RedisTagsServiceStorage._options">
+            <summary>
+            Redis存储选项配置
+            </summary>
+        </member>
+        <member name="M:Hangfire.Tags.Redis.CSRedisCore.RedisTagsServiceStorage.#ctor">
+            <summary>
+            初始化一个<see cref="T:Hangfire.Tags.Redis.CSRedisCore.RedisTagsServiceStorage"/>类型的实例
+            </summary>
+        </member>
+        <member name="M:Hangfire.Tags.Redis.CSRedisCore.RedisTagsServiceStorage.#ctor(Hangfire.Redis.RedisStorageOptions)">
+            <summary>
+            初始化一个<see cref="T:Hangfire.Tags.Redis.CSRedisCore.RedisTagsServiceStorage"/>类型的实例
+            </summary>
+            <param name="options">Redis存储选项配置</param>
+        </member>
+        <member name="M:Hangfire.Tags.Redis.CSRedisCore.RedisTagsServiceStorage.GetMonitoringApi(Hangfire.JobStorage)">
+            <summary>
+            获取监控API
+            </summary>
+            <param name="jobStorage">作业存储</param>
+        </member>
+        <member name="M:Hangfire.Tags.Redis.CSRedisCore.RedisTagsServiceStorage.GetRedisKey(System.String)">
+            <summary>
+            获取Redis缓存键
+            </summary>
+            <param name="key">缓存键</param>
+        </member>
+        <member name="M:Hangfire.Tags.Redis.CSRedisCore.RedisTagsServiceStorage.GetTransaction(Hangfire.Storage.IWriteOnlyTransaction)">
+            <summary>
+            获取标签事务
+            </summary>
+            <param name="transaction">只写事务</param>
+        </member>
+        <member name="M:Hangfire.Tags.Redis.CSRedisCore.RedisTagsServiceStorage.SearchWeightedTags(Hangfire.JobStorage,System.String,System.String)">
+            <summary>
+            搜索加权标签
+            </summary>
+            <param name="jobStorage">作业存储</param>
+            <param name="tag">标签</param>
+            <param name="setKey">Set键名</param>
+        </member>
+        <member name="M:Hangfire.Tags.Redis.CSRedisCore.RedisTagsServiceStorage.SearchRelatedTags(Hangfire.JobStorage,System.String,System.String)">
+            <summary>
+            搜索相关标签
+            </summary>
+            <param name="jobStorage">作业存储</param>
+            <param name="tag">标签</param>
+            <param name="setKey">Set键名</param>
+        </member>
+        <member name="M:Hangfire.Tags.Redis.CSRedisCore.RedisTagsServiceStorage.GetJobCount(Hangfire.JobStorage,System.String[],System.String)">
+            <summary>
+            获取作业计数
+            </summary>
+            <param name="jobStorage">作业存储</param>
+            <param name="tags">标签数组</param>
+            <param name="stateName">状态名称</param>
+        </member>
+        <member name="M:Hangfire.Tags.Redis.CSRedisCore.RedisTagsServiceStorage.GetJobCount(CSRedis.CSRedisClient,System.String[],System.String)">
+            <summary>
+            获取作业计数
+            </summary>
+            <param name="redis">Redis客户端</param>
+            <param name="tags">标签数组</param>
+            <param name="stateName">状态名称</param>
+        </member>
+        <member name="M:Hangfire.Tags.Redis.CSRedisCore.RedisTagsServiceStorage.GetJobStateCount(Hangfire.JobStorage,System.String[],System.Int32)">
+            <summary>
+            获取作业状态技术
+            </summary>
+            <param name="jobStorage">作业存储</param>
+            <param name="tags">标签数组</param>
+            <param name="maxTags">最大标签数</param>
+        </member>
+        <member name="M:Hangfire.Tags.Redis.CSRedisCore.RedisTagsServiceStorage.GetMatchingJobs(Hangfire.JobStorage,System.String[],System.Int32,System.Int32,System.String)">
+            <summary>
+            获取匹配的作业列表
+            </summary>
+            <param name="jobStorage">作业存储</param>
+            <param name="tags">标签数组</param>
+            <param name="from">分页开始索引</param>
+            <param name="count">每页数量</param>
+            <param name="stateName">状态名</param>
+        </member>
+        <member name="M:Hangfire.Tags.Redis.CSRedisCore.RedisTagsServiceStorage.GetNullableStateDate(Hangfire.Tags.Redis.CSRedisCore.RedisTagsServiceStorage.SafeDictionary{System.String,System.String},System.String)">
+            <summary>
+            获取可空的状态日期
+            </summary>
+            <param name="stateData">状态数据</param>
+            <param name="stateName">状态名</param>
+        </member>
+        <member name="M:Hangfire.Tags.Redis.CSRedisCore.RedisTagsServiceStorage.GetJobs``1(CSRedis.CSRedisClient,System.Int32,System.Int32,System.String[],System.String,System.Func{Hangfire.Tags.Redis.CSRedisCore.RedisJob,Hangfire.Common.Job,Hangfire.Tags.Redis.CSRedisCore.RedisTagsServiceStorage.SafeDictionary{System.String,System.String},``0})">
+            <summary>
+            获取作业列表
+            </summary>
+            <typeparam name="TDto">数据传输对象类型</typeparam>
+            <param name="redis">Redis客户端</param>
+            <param name="from">分页开始索引</param>
+            <param name="count">每页数量</param>
+            <param name="tags">标签数组</param>
+            <param name="stateName">状态明</param>
+            <param name="selector">选择器</param>
+        </member>
+        <member name="M:Hangfire.Tags.Redis.CSRedisCore.RedisTagsServiceStorage.DeserializeJob(System.String,System.String)">
+            <summary>
+            反序列化作业
+            </summary>
+            <param name="invocationData">调用数据</param>
+            <param name="arguments">参数</param>
+        </member>
+        <member name="M:Hangfire.Tags.Redis.CSRedisCore.RedisTagsServiceStorage.DeserializeJobs``1(System.Collections.Generic.ICollection{Hangfire.Tags.Redis.CSRedisCore.RedisJob},System.Func{Hangfire.Tags.Redis.CSRedisCore.RedisJob,Hangfire.Common.Job,Hangfire.Tags.Redis.CSRedisCore.RedisTagsServiceStorage.SafeDictionary{System.String,System.String},``0})">
+            <summary>
+            反序列化作业列表
+            </summary>
+            <typeparam name="TDto">数据传输对象类型</typeparam>
+            <param name="jobs">作业列表</param>
+            <param name="selector">选择器</param>
+        </member>
+        <member name="T:Hangfire.Tags.Redis.CSRedisCore.RedisTagsServiceStorage.SafeDictionary`2">
+            <summary>
+            安全字典
+            <para>
+            解决无效key问题：https://github.com/HangfireIO/Hangfire/issues/871
+            </para>
+            </summary>
+            <typeparam name="TKey">键类型</typeparam>
+            <typeparam name="TValue">值类型</typeparam>
+        </member>
+        <member name="M:Hangfire.Tags.Redis.CSRedisCore.RedisTagsServiceStorage.SafeDictionary`2.#ctor(System.Collections.Generic.IDictionary{`0,`1},System.Collections.Generic.IEqualityComparer{`0})">
+            <summary>
+            初始化一个<see cref="T:Hangfire.Tags.Redis.CSRedisCore.RedisTagsServiceStorage.SafeDictionary`2"/>类型的实例
+            </summary>
+        </member>
+        <member name="P:Hangfire.Tags.Redis.CSRedisCore.RedisTagsServiceStorage.SafeDictionary`2.Item(`0)">
+            <summary>
+            获取或设置指定键值对
+            </summary>
+            <param name="key">键名</param>
+        </member>
+        <member name="T:Hangfire.Tags.Redis.CSRedisCore.RedisTagsTransaction">
+            <summary>
+            Redis标签事务
+            </summary>
+        </member>
+        <member name="M:Hangfire.Tags.Redis.CSRedisCore.RedisTagsTransaction.ExpireSetValue(System.String,System.String,System.TimeSpan)">
+            <summary>
+            设置 Set 过期时间
+            </summary>
+            <param name="key">缓存键</param>
+            <param name="value">值</param>
+            <param name="expireIn">过期时间</param>
+        </member>
+        <member name="M:Hangfire.Tags.Redis.CSRedisCore.RedisTagsTransaction.PersistSetValue(System.String,System.String)">
+            <summary>
+            设置 Set 持久保持
+            </summary>
+            <param name="key">缓存键</param>
+            <param name="value">值</param>
+        </member>
     </members>
 </doc>
